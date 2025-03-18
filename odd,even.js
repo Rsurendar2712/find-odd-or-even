@@ -1,38 +1,36 @@
-function odd(){  
-    var x=document.getElementById('in').value;
-     var y=document.getElementById('final');
-   
-    var s=document.getElementById
+function odd() {  
+    var x = document.getElementById('in').value;
+    var y = document.getElementById('final');
+    
     var b = /[a-zA-Z]/;
 
-  if(a<0){
-       var a=(x+x)%2
-     return a;
-    }else if(b.test(x)){
-       a="b"
-    }
-   else{
-        var a=x%2
+    if (x === '') {
+        y.innerHTML = 'Enter the correct value';
+        return;
     }
 
-    
-     if(x===''){
-        y.innerHTML='Enter the correct value'
-     }
-    
-    
-    else if(a==0){
-        y.innerHTML=x+' is even';
+    if (b.test(x)) {
+        y.innerHTML = x + " is a character";
+        return;
     }
-    else if(a<1){
-        y.innerHTML=x+'This is not a integer';
-    } else if(a="b"){
-        y.innerHTML=x+" "+'This is charactor';
+
+    x = Number(x); 
+
+    if (isNaN(x)) {
+        y.innerHTML = 'This is not a valid number';
+        return;
     }
-else {
-   y.innerHTML=x+''+' it is odd '
+
+    if (!Number.isInteger(x)) {
+        y.innerHTML = x + ' is not an integer';
+        return;
+    }
+
+    if (x % 2 === 0) {
+        y.innerHTML = x + ' is even';
+    } else {
+        y.innerHTML = x + ' is odd';
+    }
+
+    document.getElementById('in').value = ''; 
 }
-var x = document.getElementById('in').value=null;
-    }
-    
-
